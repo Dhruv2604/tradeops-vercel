@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TradeOps AI | Trading Operations Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="brand"><span class="brand-mark">T</span> TradeOps <span class="ai">AI</span></div>
+        <div class="subtitle">Trading workflow & anomaly intelligence</div>
+      </div>
+      <div class="status"><span class="status-dot"></span> System Operational</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">FINTECH OPERATIONS MONITOR</p>
+          <h1>AI-powered trading workflow visibility</h1>
+          <p class="hero-copy">Monitor transaction volume, system latency and unusual operational behavior through an interactive analytics dashboard.</p>
+        </div>
+        <div class="hero-badge">
+          <span>MODEL</span>
+          <strong>Isolation Forest</strong>
+          <small>5% contamination threshold</small>
+        </div>
+      </section>
+
+      <section class="metrics">
+        <article class="metric-card">
+          <span>Total Trades Monitored</span>
+          <strong id="totalTrades">—</strong>
+          <small>500 hours of workflow data</small>
+        </article>
+        <article class="metric-card">
+          <span>Average Latency</span>
+          <strong id="avgLatency">—</strong>
+          <small>milliseconds</small>
+        </article>
+        <article class="metric-card">
+          <span>AI-Flagged Anomalies</span>
+          <strong id="anomalyCount">—</strong>
+          <small>events requiring review</small>
+        </article>
+        <article class="metric-card">
+          <span>High-Risk Rate</span>
+          <strong id="riskRate">—</strong>
+          <small>of monitored events</small>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel chart-panel wide">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">WORKFLOW PERFORMANCE</p>
+              <h2>System Latency</h2>
+            </div>
+            <span class="pill">500 hourly observations</span>
+          </div>
+          <div class="chart-wrap"><canvas id="latencyChart"></canvas></div>
+        </article>
+
+        <article class="panel chart-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">TRADING ACTIVITY</p>
+              <h2>Trade Volume</h2>
+            </div>
+          </div>
+          <div class="chart-wrap"><canvas id="volumeChart"></canvas></div>
+        </article>
+
+        <article class="panel risk-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">AI RISK ENGINE</p>
+              <h2>Detection Summary</h2>
+            </div>
+          </div>
+          <div class="risk-summary">
+            <div class="risk-ring"><span id="ringValue">—</span><small>flagged</small></div>
+            <div>
+              <h3>Operational anomalies</h3>
+              <p>Unusual latency and transaction-volume behavior is surfaced for operational review.</p>
+            </div>
+          </div>
+          <div class="legend-row"><span><i class="dot normal"></i> Normal</span><span><i class="dot high"></i> High Risk</span></div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">REVIEW QUEUE</p>
+              <h2>AI Risk Detection Output</h2>
+            </div>
+            <button id="refreshBtn" class="refresh">Regenerate Demo Data</button>
+          </div>
+          <p class="panel-copy">Synthetic operational events are scored in-browser for the live demo. The repository contains the original Python Isolation Forest implementation.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Timestamp</th><th>Trade Volume</th><th>Latency</th><th>Risk Level</th></tr></thead>
+              <tbody id="anomalyTable"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>TradeOps AI</span>
+      <span>Interactive portfolio demo • Built for recruitment showcase</span>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
