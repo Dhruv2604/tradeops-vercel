@@ -4,7 +4,7 @@
 
 ### 🚀 Live Demo
 
-**[View Live Application](YOUR_VERCEL_URL)** · **[GitHub](https://github.com/Dhruv2604/Tradeops-AI-Dashboard)**
+**[View Live Application](https://tradeops-vercel.vercel.app/)** · **[GitHub](https://github.com/Dhruv2604/Tradeops-AI-Dashboard)**
 
 ## What It Does
 
